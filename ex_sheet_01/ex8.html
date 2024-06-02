@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const str = prompt("Enter a sentence");
+        const words = str.split(" ");
+        let titleCase = "";
+        for (let i = 0; i < words.length; i++) {
+            titleCase += words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase() + " "; 
+        // .charAt(0) is used to get the character at a specified index within a string
+        // .slice(1) returns a substring starting from the index specified to the end of the sting
+        }
+        console.log(titleCase);
+    </script>
+</body>
+</html>
