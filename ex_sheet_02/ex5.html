@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calcBMI(weight, height) {
+            const BMI =  weight / (height * height);
+            let classification = '';
+            if (BMI < 18.5) {
+                classification = "Underweight";
+            } else if (BMI >= 18.5 && BMI <= 24.9) {
+                classification = "Normal weight";
+            } else if (BMI >= 25.0 && BMI <= 29.9) {
+                classification = "Overweight";
+            } else if (BMI >= 30.0 && BMI <= 34.9) {
+                classification = "Obese (Class I)";
+            } else if (BMI >= 35.0 && BMI <= 39.9) {
+                classification = "Obese (Class II)" 
+            } else {
+                classification = "Obese (Class III)"
+            }
+            alert(`Your BMI is ${BMI.toFixed(2)} and your classification is ${classification}`);
+        }
+        
+        const weight = +prompt("Enter your weight in kg");
+        const height = +prompt("Enter your height in m");
+        calcBMI(weight, height);
+    </script>
+</body>
+</html>
