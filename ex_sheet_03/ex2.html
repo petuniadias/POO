@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1">It’s a sunny day</p>
+    <img src="https://woodstoneseniorliving.com/wp-content/uploads/2021/07/sun-blog.png" alt="">
+    <p id="p2">Another day to code!</p>
+
+    <script>
+        const p1 = document.getElementById("p1");
+        p1.textContent = "It's a rainy day";
+
+        const image = document.querySelector("img");
+        image.src = "https://st3.depositphotos.com/1400069/35282/i/450/depositphotos_352828632-stock-photo-spring-rain-forest-fresh-branches.jpg";
+
+        const p2 = document.getElementById("p2")
+        p2.style.backgroundColor = "yellow";
+    </script>
+</body>
+</html>
