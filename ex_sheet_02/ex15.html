@@ -7,16 +7,16 @@
 </head>
 <body>
     <script>
-        function min(a, b) {
-            if (a < b) {
-                return a;
-            } else {
-                return b;
+        function factorial(number) {
+
+            let result = 1;
+            for (let i = number; i > 0; i--) {
+                result *= i;
             }
+            return result;
         }
 
-        console.log(min(5, 7));
-        console.log(min(6,3));
+        console.log(factorial(5));
     </script>
 </body>
 </html>
