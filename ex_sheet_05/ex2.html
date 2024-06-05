@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const student = {
+            name: "John Doe",
+            course: "POO",
+            grade: 12
+        }
+
+        function listProperties (obj) {
+            return Object.keys(obj);
+        }
+        console.log(listProperties(student));
+
+        function removeProperties (obj, property) {
+            console.log(obj);
+            delete obj[property];
+            console.log(obj);
+        }
+        removeProperties(student, 'course');
+
+        function sizeOfObject(obj) {
+            return Object.keys(obj).length;
+        }
+        console.log(sizeOfObjects(student));
+    </script>
+</body>
+</html>
