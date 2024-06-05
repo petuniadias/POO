@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form id = "form">
+        <label for = "name">Name</label>
+            <input type = "text" id = "name" name = "name" required>
+        <br>
+        <label for = "year">Year</label>
+            <input type = "number" id = "year" name = "year" required>
+        <br>
+        <label for = "genre">Genre</label>
+        <select id = "genre" name = "genre">
+            <option id = "action">Action</option>
+            <option id = "adventure">Adventure</option>
+            <option id = "strategy">Strategy</option>
+            <option id = "sport">Sport</option>
+            <option id = "simulation">Simulation</option>
+        </select>
+        <br>
+        <label for = "cover">Cover</label>
+        <input type = "url" id = "cover" name = "cover">
+        <br>
+        <button type = "submit">Add</button>
+        <button type = "reset">Clean</button>
+        
+        <table id = "table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Year</th>
+                    <th>Genre</th>
+                    <th>Cover</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+        </table>
+        
+    </form>
+
+    <script>
+        const table = document.querySelector("table");
+
+        const submit = document.querySelector('button[type="submit"]');
+        submit.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            const name = document.querySelector("#name").value;
+            const year = document.querySelector("#year");
+            const genre = document.querySelector('select[type="genre"]');
+            const cover = document.querySelector("#cover").value;
+            
+            const currentYear = new Date().getFullYear();
+            if (year > 1950 && year <= currentYear) {
+                alert("Validation OK");
+                const row = document.createElement("tr");
+                const cellName = document.createElement("td");
+                cellName.textContent = name;
+                row.appendChild(cellName);
+                const cellYear = document.createElement("td");
+                cellName.textContent = year;
+                row.appendChild(cellYear);
+                const cellGenre = document.createElement("td");
+                cellName.textContent = genre;
+                row.appendChild(cellGenre);
+                const cellCover = document.createElement("td");
+                const img = document.createElement("img");
+                img.src = cover;
+                img.width = 100;
+                cellCover.appendChild(img);
+                row.appendChild(cellCover);
+            } else {
+                alert("Error");
+            } 
+        });
+    </script>
+</body>
+</html>

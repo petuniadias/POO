@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select>
+        <option value = "Blue">Blue</option>
+        <option value = "Green">Green</option>
+        <option value = "Red">Red</option>
+        <option value = "Yellow">Yellow</option>
+    </select>
+
+    <button id = "addBtn">Add button</button>
+    <button id = "viewBtn">View button</button>
+    <button id = "removeBtn">Remove button</button>
+
+    <script>
+        const select = document.querySelector("select");
+
+        const addBtn = document.getElementById("addBtn");
+        addBtn.addEventListener("click", () => {
+            const newItem = prompt("Enter a new item:");
+            const option = document.createElement("option");
+            //add Items to the selection list
+            option.textContent = newItem;
+            select.appendChild(option);
+        });
+
+        const viewBtn = document.getElementById("viewBtn");
+        viewBtn.addEventListener("click", () => {
+            const selectedOption = select.options[select.selectedIndex];
+            alert(selectedOption.textContent);
+        });
+
+        const removeBtn = document.getElementById("removeBtn");
+        removeBtn.addEventListener("click", () => {
+            const selectedOption = select.options[select.selectedIndex];
+            select.removeChild(selectedOption);
+        });
+        
+    </script>
+</body>
+</html>

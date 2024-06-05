@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1" onclick="showAlert()">Click me i</button>
+    <button id="btn2">Click me ii</button>
+    <button id="btn3">Click me iii</button>
+
+    <input type="text" id="txt">
+    <p id="p1"></p>
+    <button id="btn4">Click me iv</button>
+
+    <script>
+
+        //Text
+        function showAlert() {
+            alert('Hello World!');
+        }
+
+        const btn2 = document.getElementById("btn2");
+        btn2.onclick = showAlert;
+
+        const btn3 = document.getElementById("btn3");
+        btn3.addEventListener("click", showAlert);
+
+        const txt = document.getElementById("txt");
+        const p1 = document.getElementById("p1");
+        const btn4 = document.getElementById("btn4");
+
+        function playText() {
+            p1.innerText = input.value;
+        }
+
+        input.addEventListener("input", playText);
+
+        function countCharacters() {
+            alert(input.value.length)
+        }
+
+        btn4.addEventListener("click", countCharacters);
+
+        btn4.addEventListener("click", () => {
+            console.log('thanks for clicking the button!')
+        })
+    </script>
+</body>
+</html>
