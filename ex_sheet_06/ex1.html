@@ -6,6 +6,51 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form>
+        <label for="name">NOME</label>
+        <input required type="text" id="name">
+        <br>
+        <label for="category">Categoria</label>
+        <select required name="category" id="category">
+            <option>Fruta</option>
+            <option>Legumes</option>
+            <option>Carne</option>
+            <option>Peixe</option>
+            <option>Bebida</option>
+            <option>Outros</option>
+        </select>
+        <br>
+        <label>Quantidades</label>
+        <input required type="number" value="1" name="quantity" id="quantity" min="1" max="1000">
+        <br>
+        <input type="submit" value="ADICIONAR">
+    </form>
+
+    <br>
+    <hr>
+    <br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>NOME</th>
+                <th>CATEGORIA</th>
+                <th>QUANTIDADE</th>
+            </tr>
+            
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <br>
+    <hr>
+    <br>
+
+    <button onclick="numProdutos()">Nº PRODUTOS</button>
+    <button onclick="produtosCategoria()">PRODUTOS POR CATEGORIA</button>
+    <button onclick="quantidadeTotal()">QUANTIDADE TOTAL</button>
+    <button onclick="limparLista()">LIMPAR LISTA</button>
+
+    <script src="./ex1.js"></script>
 </body>
 </html>
