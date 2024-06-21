@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="red">Greetings</h1>
+    <p id="p1">Hello world</p>
+    <p id="p2" class="red">Hello Portugal</p>
+    <p id="p3">Hello Vila do Conde</p>
+    <div>This is a div</div>
+    <div>This is the second div with the
+        <span>first span</span>
+    </div>
+    <span>This is the second span</span>
+
+    <script>
+        
+    //1.
+        //a.
+        const p2 = document.getElementById('p2');
+        console.log(p2)
+        
+        //b.
+        const paragraphs = document.getElementsByTagName('p');
+        console.log(paragraphs);
+
+        //c.
+        for (i = 0; i < paragraphs.length; i++) {
+            console.log(paragraphs[i].textContent);
+        }
+
+        //d.
+        const redElements = document.getElementsByClassName('red');
+        console.log(redElements);
+
+        //e.
+        const p3 = document.getElementById('p3');
+        console.log(p3)
+
+        //f.
+        const printElements = document.querySelectorAll('p, div');
+        for (i = 0; i < printElements.length; i++) {
+            console.log(printElements[i].textContent);
+        }
+
+        //g.
+        const span = document.getElementsByTagName('span');
+        for (i = 0; i < span.length; i++) {
+            console.log(span[i].textContent);
+        }
+
+        //h.
+        const spanDiv = document.querySelector('div > span');
+            console.log(spanDiv.textContent);
+
+        //i
+        const outSpan = document.querySelector('body > span');
+            console.log(outSpan.textContent);
+ 
+    </script>
+</body>
+</html>

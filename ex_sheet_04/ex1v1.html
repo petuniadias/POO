@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--a. i.-->
+    <button class="btn1" onclick="showAlert();">click here!</button>
+    <!--a. ii.-->
+    <button class="btn2">click here!</button>
+    <!--a. iii.-->
+    <button class="btn3">click here!</button>
+    
+    <!--b.-->
+    <input type="text" id="txt">
+    <p id="p1"></p>
+    <button id="btn4">click here!</button>
+
+    <script>
+        function showAlert() {
+            alert('Hello World!');
+        }
+
+        //ii.
+        const btn2 = document.getElementsByClassName('btn2')[0];
+        btn2.onclick = showAlert; //callback
+                                    //showAlert(); se for feito assim executa logo
+        
+        //iii.
+        const btn3 = document.getElementsByClassName('btn3')[0];
+        btn3.addEventListener("click", (event) => {
+
+            //adicionais (setTimeout e backgroundcolor)
+            event.target.style.backgroundColor = "#f00";
+            setTimeout(() => {
+                showAlert();
+            }, "1000");
+        });
+
+        //b.
+        const p1 = document.getElementById('p1');
+        const txt = document.getElementById('txt');
+        const btn4 = document.getElementById('btn4');
+
+            //listener que lê o que está escrito no input para o paragrafo
+        function playText() {
+            p1.innerText = txt.value;
+        }
+
+        txt.addEventListener("input", playText);
+        
+        function countCharacters() {
+            console.log(txt.value.length)
+        }
+
+        btn4.addEventListener("click", countCharacters);
+
+
+        //c.
+
+        btn4.addEventListener("click", () => {
+            console.log('thanks for clicking the button!');
+        }) 
+
+        //d.
+        
+    </script>
+</body>
+</html>

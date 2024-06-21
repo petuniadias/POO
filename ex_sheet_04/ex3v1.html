@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--a.-->
+    <form>
+        <label for="name">Name</label>
+        <input type="text" id="name" required>
+
+        <br>
+
+        <label for="year">Year</label>
+        <input type="number" id="year" min="1900" max="2024" required>
+
+        <br>
+
+        <label for="genre">Genre</label>
+        <select>
+            <option>Action</option>
+            <option>Adventure</option>
+            <option>Strategy</option>
+            <option>Sport</option>
+            <option>Simulation</option>
+        </select>
+
+        <br>
+
+        <input type="file" id="image">
+
+        <br>
+
+        <button type="submit" id="btn1">Submit</button>
+        <button id="resetBtn">Reset</button>
+
+    </form>
+
+    <!--b.-->
+    <table>
+        <th>Name</th>
+        <th>Year</th>
+        <th>Genre</th>
+        <th>Cover</th>
+        <th>Options</th>
+    </table>
+
+    <style>
+        table {
+            padding: 10px;
+        }
+    </style>
+
+    <script>
+        const submitBtn = document.getElementById('submitBtn');
+
+        submitBtn.addEventListener("click", (event) => {
+            const year = document.getElementById('year');
+            const genre = document.getElement
+        })
+    </script>
+</body>
+</html>
