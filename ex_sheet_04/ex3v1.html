@@ -14,12 +14,12 @@
         <br>
 
         <label for="year">Year</label>
-        <input type="number" id="year" min="1900" max="2024" required>
+        <input type="number" id="year" min="1900" max="2024" value="2024" " required>
 
         <br>
 
         <label for="genre">Genre</label>
-        <select>
+        <select id="genre" name="genre">
             <option>Action</option>
             <option>Adventure</option>
             <option>Strategy</option>
@@ -29,11 +29,11 @@
 
         <br>
 
-        <input type="file" id="image">
+        <input type="file" id="img">
 
         <br>
 
-        <button type="submit" id="btn1">Submit</button>
+        <button type="submit" id="submitBtn">Submit</button>
         <button id="resetBtn">Reset</button>
 
     </form>
@@ -54,12 +54,75 @@
     </style>
 
     <script>
+
+        //c.
+
         const submitBtn = document.getElementById('submitBtn');
 
+        const table = document.querySelector('table');
+
         submitBtn.addEventListener("click", (event) => {
-            const year = document.getElementById('year');
-            const genre = document.getElement
-        })
+
+            event.preventDefault(); // Prevent the default form submission behavior if inside a form
+
+            const name = document.getElementById('name').value;
+            const year = document.getElementById('year').value;
+            const genre = document.querySelector('select[name="genre"]').value;
+            const image = document.getElementById('img').value;
+
+            const currentYear = new Date().getFullYear();
+
+
+
+            if (year > 1950 && year <= currentYear) {
+                alert('Validation OK');
+                const row = document.createElement('tr');
+                const td1 = document.createElement('td');
+                const td2 = document.createElement('td');
+                const td3 = document.createElement('td');
+                const td4 = document.createElement('td');
+
+                const imgUpload = document.createElement('img');
+                imgUpload.src = encodeURI(img);
+                imgUpload.setAttribute("alt", "img");
+
+                row.appendChild(td1);
+                td1.textContent = name;
+                row.appendChild(td2);
+                td2.textContent = year;
+                row.appendChild(td3);
+                td3.textContent = genre;
+                row.appendChild(td4);
+                table.appendChild(row);
+                td1.textContent = name;
+                td2.textContent = year;
+                td3.textContent = genre;
+                td4.appendChild(imgUpload);
+                // img.src = image.value;
+                // img.width = 100;
+
+                //e
+                const td5 = document.createElement('td');
+                td5.textContent = "x";
+                row.appendChild(td5);
+
+                td5.addEventListener("click", () => {
+                    table.removeChild(row);
+                })
+
+            } else {
+                alert('Error');
+            }
+
+        });
+
+            //d
+            const reset = document.getElementById('resetBtn');
+
+            reset.addEventListener("click", (event) => {
+                document.querySelector("form").reset();
+            });
+
     </script>
 </body>
 </html>
