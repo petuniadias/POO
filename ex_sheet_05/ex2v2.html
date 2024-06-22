@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const student = {
+            name: "John Doe",
+            course: "POO",
+            grade: 12
+        }
+
+        //a.
+        function listProperties(studentObj) {
+            let names = [];
+            for (const key in studentObj) {
+                const value = studentObj[key];
+                // console.log(key, value);
+                names.push(key);
+            }
+            return names;
+        }
+        console.log(listProperties(student));
+
+        listProperties(student);
+    </script>
+</body> 
+</html>
