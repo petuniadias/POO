@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--a.-->
+    <form id="form">
+        <!--i.-->
+        <label for="name">Name</label>
+        <input type="text" id="name" required>
+
+        <br>
+
+        <!--ii.-->
+        <legend>Course (radio)</legend>
+        <input type="radio" id="tsiw" name="curso" value="TSIW" required>
+        <label for="tsiw">TSIW</label>
+        <input type="radio" id="multimedia" name="curso" value="Multimédia">
+        <label for="multimedia">Multimédia</label>
+        <input type="radio" id="tcav" name="curso" value="TCAV">
+        <label for="tcav">TCAV</label>
+        <input type="radio" id="design" name="curso" value="Design">
+        <label for="design">Design</label>
+        <input type="radio" id="photography" name="curso" value="Photography">
+        <label for="photography">Photography</label>
+
+        <br>
+
+        <!--iii.-->
+        <label for="userType">User Type</label>
+        <select id="userType" required>
+            <option value="student">student</option>
+            <option value="teach">teach</option>
+            <option value="employee">employee</option>
+            <option value="other">other</option>
+        </select>
+
+        <!--iv.-->
+        <br>
+        <legend>Session</legend>
+        <input type="checkbox" id="morning" name="session" value="Morning" required>
+        <label for="morning">Morning</label>
+        <input type="checkbox" id="afternoon" name="session" value="Afternoon">
+        <label for="afternoon">Afternoon</label>
+
+        <!--v.-->
+        <br>
+        <button id="addBtn" type="submit">Submit</button>
+        <button id="peopleBtn">Number of People</button>
+
+        <!--b.-->
+        <table id="userData">
+            <th>Name</th>
+            <th>Course</th>
+            <th>User type</th>
+            <th>Session</th>
+            
+        </table>
+    </form>
+
+    <script>
+
+        //iii.
+        const userType = document.getElementById("userType");
+        const form = document.querySelector("form");
+        const addBtn = document.getElementById("addBtn");
+        const peopleBtn = document.getElementById("peopleBtn");
+        
+        userType.addEventListener('change', () => {
+            if (userType.value === 'other') {
+                const newUser = prompt("Add new user type: ");
+                const option = document.createElement('option');
+                option.textContent = newUser;
+                option.value = newUser;
+                userType.appendChild(option);
+                userType.value = newUser;
+            }
+        });
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const curso = document.querySelector('input[name="curso"]').value;
+            const userType = document.getElementById('userType').value;
+            const session = Array.from(document.querySelectorAll('input[name="session"]:checked')).map(checkbox => checkbox.value);
+
+            //one session must be selected
+            if (session.length === 0) {
+                alert('At least one session must be selected');
+                return;
+            }
+
+            const table = document.getElementById("userData");
+
+            const row = document.createElement("tr");
+
+
+            const nameData = document.createElement('td');
+            const cursoData = document.createElement('td');
+            const userTypeData = document.createElement('td');
+            const sessionData = document.createElement('td');
+
+            
+            row.appendChild(nameData);
+            row.appendChild(cursoData);
+            row.appendChild(userTypeData);
+            row.appendChild(sessionData);
+            
+            nameData.textContent = name;
+            cursoData.textContent = curso;
+            userTypeData.textContent = userType;
+            sessionData.textContent = session.join(', ');
+
+            table.appendChild(row);
+
+            document.getElementById("form").reset();
+
+        });
+
+        peopleBtn.addEventListener('click', () => {
+            const rows = document.querySelectorAll('table tr');
+            alert(`The number of registered users is ${rows.length -1}`);
+        })
+
+
+    </script>
+</body>
+</html>
