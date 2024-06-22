@@ -11,7 +11,7 @@
             name: "John Doe",
             course: "POO",
             grade: 12
-        }
+        };
 
         //a.
         function listProperties(studentObj) {
@@ -26,6 +26,17 @@
         console.log(listProperties(student));
 
         listProperties(student);
+
+        //b. 
+        function removeProperties(studentObj, property) {
+            delete studentObj[property];
+            return studentObj;
+        }
+        console.log(removeProperties(student, 'name'));
+
+        //c.
+        function calcSize() {
+        }
     </script>
 </body> 
 </html>
