@@ -89,6 +89,14 @@
             const categoria = document.getElementById('categoria').value;
             const quantidade = document.getElementById('quantidade').value;
 
+            //há repetido?
+            for (const produto of listProducts) {
+                if (produto.name === name) {
+                    alert(`O produto já existe!!!`);
+                    return;
+                }
+                
+            }
             //adicionar à tabela
             const tbody = document.querySelector('table > tbody');
             const row = document.createElement('tr');
@@ -106,12 +114,13 @@
             td3.textContent = quantidade;
 
             // Object.assign(produtos, {name: name, categoria: categoria, quantidade: quantidade});
-            const new_product = {
+            const produto = {
                 name: name,
                 categoria: categoria,
                 quantidade: quantidade
             };
-            listProducts.push(new_product);
+
+            listProducts.push(produto);
             form.reset();
         });
 
