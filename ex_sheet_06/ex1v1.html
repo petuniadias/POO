@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <!--1.-->
+        <label for="name">Name:</label>
+        <input id="name" required>
+
+        <br>
+        <label for="categoria">Selecione categoria:</label>
+        <select id="categoria" required>
+            <option value="">--Please choose an option--</option>
+            <option value="fruta">Fruta</option>
+            <option value="legumes">Legumes</option>
+            <option value="carne">Carne</option>
+            <option value="peixe">Peixe</option>
+            <option value="bebida">Bebida</option>
+            <option value="outros">Outros</option>
+        </select>
+
+        <br>
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" required>
+
+        <br>
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <!--2.-->
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <!--3.-->
+
+    <br>
+    <button>Nº DE PRODUTOS</button>
+    <button>PRODUTOS POR CATEGORIA</button>
+    <button>QUANTIDADE TOTAL</button>
+    <button>LIMPAR LISTA</button>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 2px solid rgb(140 140 140);
+            font-family: sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        thead {
+            background-color: rgb(228 240 245);
+        }
+
+        th, td {
+            border: 1px solid rgb(160 160 160);
+            padding: 8px 10px;
+        }
+    </style>
+
+    <script>
+
+    </script>
+</body>
+</html>
