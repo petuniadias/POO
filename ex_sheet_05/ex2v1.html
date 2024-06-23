@@ -35,8 +35,10 @@
         console.log(removeProperties(student, 'name'));
 
         //c.
-        function calcSize() {
+        function calcSize(obj) {
+            return Object.keys(obj).length;
         }
+        console.log(calcSize(student));
     </script>
 </body> 
 </html>

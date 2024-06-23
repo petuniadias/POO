@@ -7,7 +7,63 @@
 </head>
 <body>
     <script>
-        
+        //a.
+        const person = {
+            name: 'John Reeves',
+            address: 'Elm Street',
+            birthday: '02/01/2005',
+            local_birth: 'Elm Street',
+            contacts: {
+                phone: '969888111',
+                mail: 'johnreeves@gmail.com' 
+            },
+            profession: 'Doctor'
+        };
+
+        //b.
+        const game = {
+            final_score: '2-1',
+            stadium_name: 'Infestinha estádio',
+            date: '23/06/2024',
+            time: '19:30',
+            team1: 'Rio Ave FC',
+            team2:  'Infesta FC',
+            goals: [
+                {
+                    team: 'team1',
+                    player: 'Joãozinho',
+                    time: '10:00',
+                },
+                {
+                    team: 'team2',
+                    player: 'José Manel dos Santos da Silva',
+                    time: '20:00',
+                },
+                {
+                    team: 'team1',
+                    player: 'António Manel',
+                    time: '45:00',
+                },
+            ],
+
+            score: function calcScores() {
+                let team1goals = 0;
+                let team2goals = 0;
+
+                for (let goal of game.goals) {
+                    if (goal.team === 'team1') {
+                        team1goals++;
+                    } else {
+                        team2goals++;
+                    }
+                }
+                
+                return {
+                    team1goals: team1goals,
+                    team2goals: team2goals
+                };
+            }
+        }
     </script>
 </body>
 </html>
