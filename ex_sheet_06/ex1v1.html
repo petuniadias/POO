@@ -48,10 +48,10 @@
     <!--3.-->
 
     <br>
-    <button>Nº DE PRODUTOS</button>
-    <button>PRODUTOS POR CATEGORIA</button>
-    <button>QUANTIDADE TOTAL</button>
-    <button>LIMPAR LISTA</button>
+    <button id="numProdutos">Nº DE PRODUTOS</button>
+    <button id="categoriaProdutos">PRODUTOS POR CATEGORIA</button>
+    <button id="quantidadeTotal">QUANTIDADE TOTAL</button>
+    <button id="limparLista">LIMPAR LISTA</button>
 
     <style>
         table {
@@ -120,6 +120,18 @@
                 quantidade: quantidade
             };
 
+            //b.
+            const categoriaProdutos = document.getElementById('categoriaProdutos');
+            categoriaProdutos.addEventListener('click', () => {
+                const selectCategory = prompt('Categoria:');
+                for (selectCategory of listProducts) {
+                    
+                }
+                const countCategoria = produto.length;
+                alert(`A lista de compras tem ${countCategoria} da categoria ${selectCategory} a comprar.`);
+                    
+            });
+
             listProducts.push(produto);
             form.reset();
         });
@@ -130,7 +142,18 @@
         };**/
 
         //Object.assign(produtos, {name: name.value, categoria: categoria.value, quantidade: quantidade.value});
+
         console.log(listProducts);
+
+        //5.
+
+        //a.
+        const numProdutos = document.getElementById('numProdutos');
+        numProdutos.addEventListener('click', () => {
+            const countProducts = listProducts.length;
+            alert(`A lista de compras tem ${countProducts} produtos`);
+        });
+
     </script>
 </body>
 </html>
