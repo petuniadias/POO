@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const menu = {
+            width: 200,
+            height: 300,
+            title: "My menu"
+        };
+
+        const multiplyNumeric = (obj) => {
+            for (const key in obj) {
+                if (typeof obj[key] === 'number') {
+                    result = obj[key]*2;
+                }
+            }
+            return result;
+        };
+
+        multiplyNumeric(menu);
+        console.log(multiplyNumeric(menu));
+    </script>
+</body>
+</html>
