@@ -132,7 +132,7 @@
                 alert(`A lista de compras tem ${countCategoria} da categoria ${selectCategory} a comprar.`);
             });
 
-            //d.
+            //5. d.
 
             const limparLista = document.getElementById('limparLista');
             limparLista.addEventListener('click', () => {
@@ -166,7 +166,14 @@
             alert(`A lista de compras tem ${sum} itens de produtos`);
         });
 
+        //6.
 
+        const btnCategoria = document.createElement('button');
+        btnCategoria.innerHTML = 'Nova Categoria';
+        btnCategoria.setAttribute('id', 'newCategoria');
+        btnCategoria.addEventListener('click', () => {
+            newCategory = prompt('Add the new Category:')
+        });
     </script>
 </body>
 </html>
