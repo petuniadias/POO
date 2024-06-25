@@ -113,35 +113,29 @@
             td2.textContent = categoria;
             td3.textContent = quantidade;
 
-            // Object.assign(produtos, {name: name, categoria: categoria, quantidade: quantidade});
             const produto = {
                 name: name,
                 categoria: categoria,
                 quantidade: quantidade
             };
 
-            //b.
-            const categoriaProdutos = document.getElementById('categoriaProdutos');
-            categoriaProdutos.addEventListener('click', () => {
+            //5. b.
+            const categoriaProdutos = document.getElementById('categoriaProdutos'); //vai buscar o botão categoriaProdutos
+            categoriaProdutos.addEventListener('click', () => { //quando clicado
                 const selectCategory = prompt('Categoria:');
-                for (selectCategory of listProducts) {
-                    
+                let countCategoria = 0;
+
+                for (const produto of listProducts) {
+                    if (produto.categoria === selectCategory) {
+                        countCategoria++;
+                    }
                 }
-                const countCategoria = produto.length;
                 alert(`A lista de compras tem ${countCategoria} da categoria ${selectCategory} a comprar.`);
-                    
             });
 
             listProducts.push(produto);
             form.reset();
         });
-
-        /**const produtos = {
-            name: name.value,
-            categoria:
-        };**/
-
-        //Object.assign(produtos, {name: name.value, categoria: categoria.value, quantidade: quantidade.value});
 
         console.log(listProducts);
 
@@ -153,6 +147,8 @@
             const countProducts = listProducts.length;
             alert(`A lista de compras tem ${countProducts} produtos`);
         });
+
+        //c.
 
     </script>
 </body>
