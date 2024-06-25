@@ -132,6 +132,14 @@
                 alert(`A lista de compras tem ${countCategoria} da categoria ${selectCategory} a comprar.`);
             });
 
+            //d.
+
+            const limparLista = document.getElementById('limparLista');
+            limparLista.addEventListener('click', () => {
+                listProducts.length = 0;
+                tbody.innerHTML = '';
+            });
+
             listProducts.push(produto);
             form.reset();
         });
@@ -152,12 +160,12 @@
         quantidadeTotal.addEventListener('click', () => {
             let sum = 0;
             for (const produto of listProducts) {
-                
                 sum += parseInt(produto.quantidade);
             }
 
             alert(`A lista de compras tem ${sum} itens de produtos`);
         });
+
 
     </script>
 </body>
