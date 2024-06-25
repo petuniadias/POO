@@ -148,6 +148,16 @@
         });
 
         //c.
+        const quantidadeTotal = document.getElementById('quantidadeTotal');
+        quantidadeTotal.addEventListener('click', () => {
+            let sum = 0;
+            for (const produto of listProducts) {
+                
+                sum += parseInt(produto.quantidade);
+            }
+
+            alert(`A lista de compras tem ${sum} itens de produtos`);
+        });
 
     </script>
 </body>
