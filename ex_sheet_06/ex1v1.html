@@ -125,11 +125,10 @@
                 const selectCategory = prompt('Categoria:');
                 let countCategoria = 0;
 
-                for (const produto of listProducts) {
-                    if (produto.categoria === selectCategory) {
-                        countCategoria++;
-                    }
+                for (const selectCategory of listProducts) {
+                    countCategoria++;
                 }
+
                 alert(`A lista de compras tem ${countCategoria} da categoria ${selectCategory} a comprar.`);
             });
 
