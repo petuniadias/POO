@@ -52,6 +52,7 @@
     <button id="categoriaProdutos">PRODUTOS POR CATEGORIA</button>
     <button id="quantidadeTotal">QUANTIDADE TOTAL</button>
     <button id="limparLista">LIMPAR LISTA</button>
+    <button id="btnCategoria">NOVA CATEGORIA</button>
 
     <style>
         table {
@@ -168,12 +169,31 @@
 
         //6.
 
-        const btnCategoria = document.createElement('button');
-        btnCategoria.innerHTML = 'Nova Categoria';
-        btnCategoria.setAttribute('id', 'newCategoria');
+        const btnCategoria = document.getElementById('btnCategoria');
         btnCategoria.addEventListener('click', () => {
-            newCategory = prompt('Add the new Category:')
+            newCategory = prompt('Add the new Category:');
+            const options = document.querySelectorAll('option'); //get list of objects
+            const newOption = document.createElement('option');
+            newOption.innerText = newCategory;
+            
+            //does it exist?
+            let exists = false;
+
+            for (option of options) {
+                if (option.innerText.toLowerCase() == newOption.innerText.toLowerCase()) {
+                    exists = true;
+                }
+            }
+
+            if (exists) {
+                return alert(`A categoria ${newCategory} já existe`);
+            }
+
+            const select = document.getElementById('categoria');
+
+            select.appendChild(newOption);
         });
+
     </script>
 </body>
 </html>
