@@ -4,10 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda</title>
-    <link href="/ex_sheet_07/assets/style.css">
+    <link rel="stylesheet" type="text/css" href="/ex_sheet_07/assets/style.css"/>
 </head>
 <body>
-    
-    <script url="/ex_sheet_07"></script>
+    <!--1.-->
+    <fieldset>
+        <legend>Add Event</legend>
+        <form id="form">
+            <input type="text" id="title" placeholder="title" required>
+            <br>
+            <textarea  id="description" placeholder="description"></textarea>
+            <br>
+            <label for="date">Date:</label>
+            <input type="datetime-local" id="date" required>
+            <br>
+            <label for="category">Select category:</label>
+            <select id="category" required>
+                <option value="work">work</option>
+                <option value="personal">personal</option>
+                <option value="social">social</option>
+                <option value="health">health</option>
+                <option value="others">others</option>
+            </select>
+
+            <br>
+            <button type="submit" id="addBtn">Add item</button>
+            
+        </form>
+    </fieldset>
+
+    <div class="grid "id="grid">
+        <div class="card">
+            <h3>Title</h3>
+            <p>Description</p>
+            <p>Date</p>
+            <p>Category</p>
+        </div>
+    </div>
+    <script src="/ex_sheet_07/assets/script.js"></script>
 </body>
 </html>
