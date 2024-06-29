@@ -11,7 +11,44 @@
 }
 
 .card {
-    background-color: #2196F3;
+    position: relativa;
+    padding: 1rem;
+}
+
+.card.expired {
+    background-color: #9e9e9e;
+}
+
+.card.work {
+    background-color: #f44336;
+}
+
+.card.personal {
+    background-color: #9c27b0;
+}
+
+.card.social {
+    background-color: #00bcd4;
+}
+
+.card.social {
+    background-color: #8bc34a;
+}
+
+.card.health {
+    background-color: #ffeb3b;
+}
+
+.card.others {
+    background-color: #ff9800;
+}
+
+.card button {
+    background-color: transparent;
+    border: none;
+    float: right;
+    clear: both;
+    cursor: pointer
 }
 
 fieldset {
