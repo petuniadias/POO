@@ -2,8 +2,14 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+#escapeRoom {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
 .card {
-    background-color: #45ff48;
+    background-color: #e6a2cb;
     padding: 1rem;
     width: fit-content;
     border: 2px solid black;
