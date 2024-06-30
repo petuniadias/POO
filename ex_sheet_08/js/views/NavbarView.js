@@ -6,7 +6,7 @@ function navbarView() {
   // CONSTRUIR CONTEÚDO DA NAVBAR (VERIFICAR SE USER AUTENTICADO)
   let result = `
       <a class="navbar-brand ml-2" href="../index.html">
-        <img src="img/logo.png" style="width: 100px; height:56px"/>
+        <img src="/img/logo.png" style="width: 100px; height:56px"/>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
