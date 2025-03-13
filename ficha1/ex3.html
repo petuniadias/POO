@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 1</title>
+  <link rel="stylesheet" href="styles/ex3.css">
+</head>
+<body>
+  <section class="calc-container">
+    <h3>Calculadora da Taxa Metabólica Basal</h3>
+    <div class="genre-container">
+    <label for="genero">Indique o Género:</label>
+    <select class="genero-dropdown genero" name="genero">
+      <option value="Masculino">Masculino</option>
+      <option value="Feminino">Feminino</option>
+    </select>
+  </div>
+
+    <label for="altura">Indique a sua altura (cm)</label>
+    <input class="altura" name="altura">
+
+    <label for="peso">Indique o seu peso (Kg)</label>
+    <input class="peso" name="peso">
+
+    <label for="idade">Indique a sua idade</label>
+    <input class="idade" name="idade">
+
+    <button class="calcular">
+      Calcular TMB
+    </button>
+
+    <div class="result-container">
+      <p class="result">
+
+      </p>
+      <p class="result-measure">
+        Kcal/dia
+      </p>
+    </div>
+
+  </section>
+  <script src="script/ex3.js"></script>
+</body>
+</html>
