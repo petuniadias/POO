@@ -1,0 +1,53 @@
+body {
+  font-family: Arial;
+}
+
+.o-tal-do-prompt {
+  padding: 10px;
+  width: 50px;
+  font-size: 15px;
+  border: 2px solid black;
+  border-radius: 2px;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 15px;
+  border: 2px solid black;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 2px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:active {
+  opacity: 0.5;
+}
+
+.fatorial-msg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+.number {
+  color: rgb(255, 86, 114);
+  font-weight: bold;
+  font-size: 40px;
+  margin-top: 10px;
+}
