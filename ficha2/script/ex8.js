@@ -15,6 +15,7 @@ const calcFatorial = function(num) {
       fatorial *= i;
     }
     fatorialMsg.style.display = `flex`;
+    fatorialMsg.innerHTML = `O fatorial de ${num} é:`;
     number.innerHTML = `${fatorial}`;
   }
 }

@@ -1,0 +1,50 @@
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+.gerador-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.limites {
+  padding: 10px 5px;
+  width: 40px;
+  border: 2px solid black;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+.submit-btn {
+  padding: 9px 20px;
+  border: 2px solid black;
+  border-radius: 2px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  opacity: 0.8;
+}
+
+.submit-btn:active {
+  opacity: 0.5;
+}
+
+.number {
+  color: rgb(255, 86, 114);
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.gerador-input {
+  margin-bottom: 5px;
+}
+
+p, h3 {
+  margin-bottom: 15px;
+  margin-top: 0px;
+}
