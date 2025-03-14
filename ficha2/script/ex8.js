@@ -3,9 +3,7 @@ const submitBtn = document.querySelector('.submit-btn');
 const fatorialMsg = document.querySelector('.fatorial-msg');
 const number = document.querySelector('.number');
 
-
-submitBtn.addEventListener('click', () => {
-  const num = parseInt(promptNumber.value);
+const calcFatorial = function(num) {
 
   if(isNaN(num) || num < 0) {
     fatorialMsg.innerHTML = `Insira um número válido!`;
@@ -19,4 +17,9 @@ submitBtn.addEventListener('click', () => {
     fatorialMsg.style.display = `flex`;
     number.innerHTML = `${fatorial}`;
   }
+}
+
+submitBtn.addEventListener('click', () => {
+  const num = parseInt(promptNumber.value);
+  calcFatorial(num);
 });
