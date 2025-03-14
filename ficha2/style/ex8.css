@@ -39,7 +39,7 @@ button:active {
 }
 
 .fatorial-msg {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   margin: 20px 0px;
@@ -50,4 +50,8 @@ button:active {
   font-weight: bold;
   font-size: 40px;
   margin-top: 10px;
+}
+
+.no-value {
+  color: red;
 }
