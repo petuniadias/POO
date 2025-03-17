@@ -15,9 +15,9 @@ calcular.addEventListener('click', () => {
   const idadeValor = parseInt(idade.value);
 
   if(genero.value === 'Masculino') {
-    resultado = 10 * pesoValor + 6.25 * alturaValor - 5 * idadeValor + 5;
+    resultado = 66 + (13.7 * pesoValor) + (5 * alturaValor) - (6.8 * idadeValor);
   } else if(genero.value === 'Feminino') {
-    resultado = 10 * pesoValor + 6.25 * alturaValor - 5 * idadeValor + 5;
+    resultado = 665 + (9.6 * pesoValor) + (1.8 * alturaValor) - (4.7 * idadeValor);
   }
   resultBox.style.display = `block`;
   result.innerHTML = `${resultado}`;
