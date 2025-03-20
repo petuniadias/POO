@@ -1,0 +1,59 @@
+body {
+    font-family: Arial;
+}
+
+.formulario {
+    padding: 10px;
+    width: 300px;
+}
+
+.formulario {
+    input {
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: 1px solid black;
+        margin-bottom: 5px;
+    }
+}
+
+.formulario button {
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.formulario label {
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.produtos {
+    display: grid;
+    
+}
+
+
+.nomeProduto-resultado {
+    background-color: rgb(255, 145, 218);
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.catProduto-resultado {
+    background-color: rgb(255, 197, 252);
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.linha {
+    display: flex;
+    
+}
