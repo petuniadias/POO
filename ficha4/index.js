@@ -19,3 +19,20 @@ function listarNivel(nivel) {
 }
 
 listarNivel(prompt('nivel'));
+
+function somarPontos(nivel) {
+    const jogadoresDoNivel = listUsers.filter(element => element.nivel === nivel);
+
+    //map() cria um novo array e coloca apenas os nomes
+    const pontos = jogadoresDoNivel.map(element => element.pontos);
+
+    let soma = 0;
+    for (let i = 0; i < pontos.length; i++) {
+        soma += pontos[i];
+    }
+
+    console.log(`Total de pontos do nível ${nivel}: ${soma}`);
+}
+
+const nivelEscolhido = parseInt(prompt('Escolhe um nível'));
+somarPontos(nivelEscolhido);
