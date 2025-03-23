@@ -36,3 +36,7 @@ function somarPontos(nivel) {
 
 const nivelEscolhido = parseInt(prompt('Escolhe um nível'));
 somarPontos(nivelEscolhido);
+
+function VerificarNivel(nivel) {
+    
+}
