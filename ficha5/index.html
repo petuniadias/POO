@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+  <h2>Gestor de Jogos de Computador</h2>
+  <!-- Formulário -->
+  <form class="add-game-forms">
+    <div class="input-box">
+      <label for="gameName" required>Nome do jogo</label>
+      <input name="gameName" class="game-name" required>
+    </div>
+    <div class="input-box">
+      <label for="year">Ano de lançamento</label>
+      <input class="year" type="number" name="year" max="2500" min="1900" required>
+    </div>
+    <div class="input-box">
+      <label for="genre">
+        Género
+      </label>
+      <select class="genre" name="genre" required>
+        <option value="ação">Ação</option>
+        <option value="aventura">Aventura</option>
+        <option value="estrategia">Estratégia</option>
+        <option value="RPG">RPG</option>
+        <option value="desporto">Desporto</option>
+        <option value="corrida">Corrida</option>
+        <option value="online">On-line</option>
+        <option value="simulação">Simulação</option>
+      </select>
+    </div>
+    <div class="input-box">
+      <label for="plataform">
+        Plataforma
+      </label>
+      <select class="plataform" name="plataform" multiple required> 
+        <option>PC</option>
+        <option>PS5</option>
+        <option>Xbox</option>
+      </select>
+    </div>
+    <div class="input-box">
+      <label for="rating">Avaliação</label>
+      <input class="rating" type="number"name="rating" max="10" min="1" required>
+    </div>
+    <div>
+    <button type="submit" class="add-btn">Adicionar</button>
+    </div>
+  </form>
+
+  <div class="filter">
+    <label for="filter">
+      Filtrar:
+    </label>
+    <select name="filter">
+      <option>Por género</option>
+      <option>Por plataforma</option>
+    </select>
+  </div>
+
+  <table class="game-table">
+    <thead>
+      <tr>
+        <th>Nome do jogo</th>
+        <th>Ano de lançamento</th>
+        <th>Género</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Nome</td>
+        <td>2000</td>
+        <td>On-line</td>
+        <td>
+          <button class="row-btn edit-btn">
+            Editar
+          </button>
+          <button class="row-btn details-btn">
+            Ver detalhes
+          </button>
+          <button class="row-btn remove-btn">
+            Remover
+          </button>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+  <script src="scripts/index.js"></script>
+</body>
+</html>

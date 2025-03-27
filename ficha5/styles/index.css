@@ -1,0 +1,58 @@
+body {
+  font-family: Helvetica;
+}
+
+.add-game-forms {
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+  justify-content: start;
+  font-size: 15px;
+}
+
+.input-box select {
+  padding: 1.5px 1px;
+}
+
+.game-table {
+  font-size: 15px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.game-table th, td {
+  border: 1px solid black;
+  padding: 10px 20px;
+}
+
+.row-btn {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.edit-btn,
+.details-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 11.5px;
+}
+
+.remove-btn {
+  background-color: transparent;
+  border: 2px solid black;
+}
+
+.filter {
+  margin-bottom: 10px;
+}
+
+.add-btn {
+  padding: 10px;
+  cursor: pointer;
+}
