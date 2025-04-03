@@ -9,7 +9,7 @@ form.addEventListener('submit', event => {
   const genre = document.querySelector('genre').value;
   const rating = document.querySelector('.rating').value;
 
-  const plataforms =  [...document.querySelector('.plataform')];
+  const plataforms =  [...document.querySelector('.plataform').selectedOptions()];
 
   const thisYear = new Date().getFullYear();
 

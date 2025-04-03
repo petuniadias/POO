@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="assets/index.css">
+</head>
+<body>
+  <div class="header">
+    <div class="app-title">
+      myCardioApp
+    </div>
+    <div class="app-subtitle">
+      Coronary Risk Calculator
+    </div>
+  </div>
+
+  <form class="form">
+    <div class="input-box">
+      <label for="colestrol-total">
+        Colesterol Total
+      </label>
+      <input class="colesterol-total" name="colestorol-total">
+    </div>
+
+    <div class="input-box">
+      <label for="HDL">
+        HDL (lipoproteína de alta densidade)
+      </label>
+      <input class="HDL" name="HDL">
+    </div>
+
+    <div class="input-box">
+      <label for="triglecerideos">
+        Triglecerídeos (TG)
+      </label>
+      <input class="triglecerideos" name="triglecerideos">
+    </div>
+    <button class="calculate-btn" type="button">
+      Calcular LDL-C
+    </button>
+
+    <div class="result">
+      <div class="result-label">
+        LDL (lipoproteína baixa densidade)
+      </div>
+      <div class="result-box">
+        
+      </div>
+      <button class="submit-btn" type="submit">
+        SUBMETER
+      </button>
+    </div>
+  </form>
+
+  <label for="fiter-select">
+    Filtrar Risco Coronário
+  </label>
+  <select name="fiter-select">
+    <option>
+      Baixo risco coronariano
+    </option>
+    <option>
+      Risco coronariano médio
+    </option>
+    <option>
+      Alto risco coronariano
+    </option>
+    <option>
+      Sem risco coronariano
+    </option>
+  </select>
+
+  <table class="table">
+    <thead>
+      <th>Colestrol</th>
+      <th>HDL</th>
+      <th>Triglicerídeos</th>
+      <th>LDL</th>
+      <th>Risco Cardiovascular</th>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+ 
+  <script src="assets/index.js"></script>
+</body>
+</html>
