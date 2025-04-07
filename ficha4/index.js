@@ -69,3 +69,14 @@ function listaTabClass() {
 }
 
 listaTabClass();
+
+function giveReward(nivel) {
+    listUsers.forEach(element => {
+        if(element.nivel === nivel) {
+            element.pontos += 100;
+        }
+    });
+    console.log(listUsers);
+}
+
+giveReward(parseInt(prompt('Seleciona um nível para dar pontos:')));
