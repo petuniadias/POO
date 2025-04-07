@@ -101,3 +101,22 @@ body {
   }
 }
 
+/* FILTERS */
+
+.filter-btn {
+  border: none;
+  border-radius: 5px;
+  padding: 7px;
+  background-color: rgb(2, 168, 2);
+  color: white;
+}
+
+
+.sort-btn {
+  border: none;
+  border-radius: 5px;
+  padding: 7px;
+  background-color: rgb(0, 168, 228);
+  color: white;
+}
+

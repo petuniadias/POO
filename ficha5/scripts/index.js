@@ -19,6 +19,7 @@ form.addEventListener('submit', event => {
   }
 
   const newGame = {name, year, genre, plataforms, rating};
+  
   games.push(newGame);
   console.log(games);
   form.reset();
