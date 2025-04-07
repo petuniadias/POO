@@ -63,7 +63,7 @@ mostrarJogadores(prompt('Vê os jogadores quem tem este colecionável:'));
 function listaTabClass() {
     const lista = listUsers
         .sort((a, b) => b.pontos - a.pontos)
-        .map(element => `${element.nome}: ${element.pontos} pontos`)
+        .map(element => `${element.pontos} ${element.nome}`)
         .join('\n');
     alert(`Classificação:\n${lista}`);
 }
@@ -80,3 +80,10 @@ function giveReward(nivel) {
 }
 
 giveReward(parseInt(prompt('Seleciona um nível para dar pontos:')));
+
+function sumPontos() {
+    let totalPontos = listUsers.reduce((sum, element) => sum + element.pontos, 0)
+    console.log(`A soma total dos pontos é: ${totalPontos}`);
+}
+
+sumPontos();
