@@ -25,7 +25,7 @@ form.addEventListener('submit', event => {
   const HDL = document.querySelector('.HDL').value;
   const triglecerideos = document.querySelector('.triglecerideos').value;
   const LDL = document.querySelector('.result-box').innerHTML;
-  const LDLvalue = parseInt(LDL);
+  const LDLvalue = calculateLDL();
 
   const newRow = {colestrolTotal, HDL, triglecerideos, LDLvalue};
   registros.push(newRow);
@@ -37,12 +37,12 @@ form.addEventListener('submit', event => {
   //score
   let riscoCardiovascular;
 
-  if (LDLvalue < 115) {
-    riscoCardiovascular = `Baixo risco coronariano`;
+  if (LDLvalue < 70) {
+    riscoCardiovascular = `Alto risco coronariano`;
   } else if (LDLvalue < 100) {
     riscoCardiovascular = `Risco coronariano médio`;
-  } else if (LDLvalue < 70) {
-    riscoCardiovascular = `Alto risco coronariano`;
+  } else if (LDLvalue < 115) {
+    riscoCardiovascular = `Baixo risco coronariano`;
   } else {
     riscoCardiovascular = `Sem risco coronariano`;
   }
@@ -50,10 +50,30 @@ form.addEventListener('submit', event => {
   //add to table
   const tbody = document.querySelector('.table tbody');
   tbody.innerHTML += `
-    <td>${colestrolTotal}</td>
-    <td>${HDL}</td>
-    <td>${triglecerideos}</td>
-    <td>${LDLvalue}</td>
-    <td>${riscoCardiovascular}</td>
+    <tr>
+      <td>${colestrolTotal}</td>
+      <td>${HDL}</td>
+      <td>${triglecerideos}</td>
+      <td>${LDLvalue}</td>
+      <td>${riscoCardiovascular}</td>
+    </tr>
+
   `;
+  });
+
+  //filters
+  const filterBtn = document.querySelector('.filter-btn');
+  const orderBtnUp = document.querySelector('.sort-btn-up');
+  const orderBtnDown = document.querySelector('.sort-btn-down');
+
+
+  filterBtn.addEventListener('click', () => {
+
+    const selectFilter = document.querySelector('.select-filter');
+    let registrosFiltrados = registros.filter(registro => {
+      return obterRisco(registro.LDLvalue) === fil
+    })
+
+
+
   });

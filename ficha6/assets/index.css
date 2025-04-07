@@ -103,6 +103,10 @@ body {
 
 /* FILTERS */
 
+.filters {
+  margin-bottom: 10px;
+}
+
 .filter-btn {
   border: none;
   border-radius: 5px;

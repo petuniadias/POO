@@ -55,27 +55,29 @@
     </div>
   </form>
 
-  <label for="fiter-select">
-    Filtrar Risco Coronário
-  </label>
-  <select name="fiter-select">
-    <option>
-      Baixo risco coronariano
-    </option>
-    <option>
-      Risco coronariano médio
-    </option>
-    <option>
-      Alto risco coronariano
-    </option>
-    <option>
-      Sem risco coronariano
-    </option>
-  </select>
-
-  <button type="button" class="filter-btn">Filtrar Risco</button>
-  <button type="button" class="sort-btn">Ordenar LDL-C</button>
-  <button type="button" class="sort-btn">Ordenar LDL-C</button>
+  <div class="filters">
+    <label for="fiter-select">
+      Filtrar Risco Coronário
+    </label>
+    <select class="select-filter" name="fiter-select">
+      <option value="baixo risco coronario">
+        Baixo risco coronariano
+      </option>
+      <option value="risco coronario medio">
+        Risco coronariano médio
+      </option>
+      <option value="alto risco coronario">
+        Alto risco coronariano
+      </option>
+      <option value="sem risco coronario">
+        Sem risco coronariano
+      </option>
+    </select>
+  
+    <button type="button" class="filter-btn">Filtrar Risco</button>
+    <button type="button" class="sort-btn sort-btn-up">Ordenar LDL-C</button>
+    <button type="button" class="sort-btn sort-btn-down">Ordenar LDL-C</button>
+  </div>
 
   <table class="table">
     <thead>

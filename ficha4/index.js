@@ -1,13 +1,11 @@
-
 // Importa modulo data.js
 import * as data from "./data.js";
 
-
 let listUsers = [];
 listUsers = data.init();
+console.log(listUsers);
 
-//console.log(listUsers)
-
+//exercício 1
 function listarNivel(nivel) {
     const jogadoresDoNivel = listUsers.filter(element => element.nivel === nivel);
 
@@ -18,7 +16,7 @@ function listarNivel(nivel) {
     alert(nomeDosJogadores.join(', '));
 }
 
-listarNivel(prompt('nivel'));
+listarNivel(prompt('Selecione um nível:'));
 
 function somarPontos(nivel) {
     const jogadoresDoNivel = listUsers.filter(element => element.nivel === nivel);
@@ -38,5 +36,8 @@ const nivelEscolhido = parseInt(prompt('Escolhe um nível'));
 somarPontos(nivelEscolhido);
 
 function VerificarNivel(nivel) {
-    
+    const exists = listUsers.some(element => element.nivel === nivel);
+    console.log(`Nível ${nivel}: ${exists}`);
+    return exists;
 }
+VerificarNivel(parseInt(prompt('Verifica se existe alguém no nível:')));
