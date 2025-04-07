@@ -7,16 +7,16 @@ console.log(listUsers);
 
 //exercício 1
 function listarNivel(nivel) {
-    const jogadoresDoNivel = listUsers.filter(element => element.nivel === nivel);
-
+    const jogadoresDoNivel = listUsers
+        .filter(element => element.nivel === nivel)
+        .map(element => element.nome)
     //map() cria um novo array e coloca apenas os nomes
-    const nomeDosJogadores = listUsers.map(element => element.nome);
-
+        .join(', ');
     //join() junta os elementos de um array e separa-os com um caractere ou sequencia de caracteres
-    alert(nomeDosJogadores.join(', '));
+    alert(`Jogadores no nível ${nivel}: ${jogadoresDoNivel}`);
 }
 
-listarNivel(prompt('Selecione um nível:'));
+listarNivel(parseInt(prompt('Selecione um nível:')));
 
 function somarPontos(nivel) {
     const jogadoresDoNivel = listUsers.filter(element => element.nivel === nivel);
@@ -48,4 +48,24 @@ function pesquisarColecionaveis(colecionavel) {
     return exists;
 }
 
-pesquisarColecionaveis(prompt());
+pesquisarColecionaveis(prompt('Escreve um colecionável:'));
+
+function mostrarJogadores(colecionavel) {
+    const nomeDosJogadores = listUsers
+        .filter(element => element.colecionaveis.includes(colecionavel))
+        .map(element => element.nome)
+        .join(', ');
+
+    alert(`Os jogadores com ${colecionavel} são: ${nomeDosJogadores}`);
+}
+mostrarJogadores(prompt('Vê os jogadores quem tem este colecionável:'));
+
+function listaTabClass() {
+    const lista = listUsers
+        .sort((a, b) => b.pontos - a.pontos)
+        .map(element => `${element.nome}: ${element.pontos} pontos`)
+        .join('\n');
+    alert(`Classificação:\n${lista}`);
+}
+
+listaTabClass();
