@@ -41,3 +41,11 @@ function VerificarNivel(nivel) {
     return exists;
 }
 VerificarNivel(parseInt(prompt('Verifica se existe alguém no nível:')));
+
+function pesquisarColecionaveis(colecionavel) {
+    const exists = listUsers.some(element => element.colecionaveis.includes(colecionavel));
+    console.log(`Colecionável ${colecionavel}: ${exists}`);
+    return exists;
+}
+
+pesquisarColecionaveis(prompt());
