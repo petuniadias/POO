@@ -1,26 +1,60 @@
-let games = []
-const form = document.querySelector('.add-game-forms');
+let games = [];
 
-form.addEventListener('submit', event => {
-  event.preventDefault(); //prevenir/suspender executar a açao por omissão de enviar os dados para o servidor
+const forms = document.querySelector('.add-game-forms');
+const table = document.querySelector('.game-table');
 
-  const name = document.querySelector('game-name').value;
-  const year = document.querySelector('year').value;
-  const genre = document.querySelector('genre').value;
+forms.addEventListener('submit', event => {
+  event.preventDefault();
+
+  const name = document.querySelector('.game-name').value;
+  const year = document.querySelector('.year').value;
+  const genre = document.querySelector('.genre').value;
   const rating = document.querySelector('.rating').value;
 
-  const plataforms =  [...document.querySelector('.plataform').selectedOptions()];
+  const plataform = [...document.querySelector('.plataform').selectedOptions]
+    .map(option => option.value)
+    .join(', ');
 
-  const thisYear = new Date().getFullYear();
+  const anoAtual = new Date().getFullYear();
 
-  if (year > thisYear) {
-    alert('');
-    return;
-  }
+  const newGame = {name, year, genre, plataform, rating};
 
-  const newGame = {name, year, genre, plataforms, rating};
-  
   games.push(newGame);
   console.log(games);
-  form.reset();
+
+  renderTable();
 });
+
+function renderTable() {
+  const tr = document.createElement('tr');
+
+  games.forEach((game, index) => {
+
+
+    tr.innerHTML = `
+      <td>${game.name}</td>
+      <td>${game.year}</td>
+      <td>${game.genre}</td>
+      <td>${game.plataform}</td>
+      <td>${game.rating}</td>
+      <td>
+        <button class="row-btn edit-btn">
+          Editar
+        </button>
+        <button onclick="seeDetails(${index})" class="row-btn details-btn">
+          Ver detalhes
+        </button>
+        <button class="row-btn remove-btn">
+          Remover
+        </button>
+      </td>
+    `;
+  })
+
+  table.appendChild(tr);
+}
+
+function seeDetails(index) {
+  const game = games[index];
+  alert(`Nome: ${game.name}\nAno de lançamento: ${game.year}\nGénero: ${game.genre}\nPlataforma: ${game.plataform}\nAvaliação: ${game.rating}`);
+}
