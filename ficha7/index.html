@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaban Board</title>
+  <link rel="stylesheet" href="assets/index.css">
+</head>
+<body>
+
+  <form class="task-form">
+    <div class="form-container">
+      <div class="header-form">
+        <h2>Kaban Board - Task Manager</h2>
+      </div>
+      <div class="input-box">
+        <input class="name-input" placeholder="Task name">
+        <input class="description-input" placeholder="Task Description">
+        <input class="date-input" type="date">
+        <select class="type-input">
+          <option>
+            ToDoList
+          </option>
+          <option>
+            InProgress
+          </option>
+          <option>
+            InReview
+          </option>
+          <option>
+            Done
+          </option>
+        </select>
+      </div>
+  
+  
+      <button class="submit-btn" type="submit">
+        SUBMETER
+      </button>
+    </div>
+  </form>
+  <hr>
+
+  <div class="tasks-management">
+    <h3 class="tasks-container-title">Tasks</h3>
+    <div class="task-container">
+      <div class="task-box">
+        <div class="title-and-close-icon">
+          <div class="task-title">Escolha Tema</div>
+          <img class="close" src="assets/icons/close_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg">
+        </div>
+    
+        <div class="task-description">Escolher o tema da App</div>
+        <div class="task-date">2025/04/02</div>
+        <div class="task-status">Done</div>
+      </div>
+    </div>
+  
+  </div>
+  <script type="module" src="assets/index.js"></script>
+</body>
+</html>
