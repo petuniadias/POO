@@ -1,6 +1,6 @@
 
 
-let tasks = []
+export let tasks = []
 
 export function init() {
 

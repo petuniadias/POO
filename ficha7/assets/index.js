@@ -1,17 +1,23 @@
+import {tasks, init} from './init.js';
+
 const taskForm = document.querySelector('.task-form');
+
+init().forEach(task => {
+  renderTasks(task.title, task.description, task.date, task.status);
+});
 
 taskForm.addEventListener('submit', event => {
   event.preventDefault();
 
-  const name = document.querySelector('.name-input').value;
+  const title = document.querySelector('.name-input').value;
   const description = document.querySelector('.description-input').value;
   const date = document.querySelector('.date-input').value;
-  const type = document.querySelector('.type-input').value;
+  const status = document.querySelector('.type-input').value;
 
-  renderTasks(name, description, date, type);
+  renderTasks(title, description, date, status);
 });
 
-function renderTasks(name, description, date, type) {
+function renderTasks(title, description, date, status) {
   const taskGrid = document.querySelector('.task-container');
 
   const newTask = document.createElement('div');
@@ -19,13 +25,13 @@ function renderTasks(name, description, date, type) {
 
   newTask.innerHTML = `
     <div class="title-and-close-icon">
-      <div class="task-title">${name}</div>
+      <div class="task-title">${title}</div>
       <img class="close" src="assets/icons/close_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg">
     </div>
 
     <div class="task-description">${description}</div>
     <div class="task-date">${date}</div>
-    <div class="task-status">${type}</div>
+    <div class="task-status">${status}</div>
   `;
 
   taskGrid.appendChild(newTask);
@@ -53,7 +59,7 @@ function renderTasks(name, description, date, type) {
 
   //newTask.append(taskTitle, taskDescription, taskDate, taskType); can be used too
 
-  switch (type) {
+  switch (status) {
     case 'ToDoList':
       newTask.style.backgroundColor = 'rgb(57, 173, 36)';
       break;
@@ -73,12 +79,17 @@ function renderTasks(name, description, date, type) {
     default:
       newTask.style.backgroundColor = 'rgb(211, 211, 211)';
   }
+
+  deleteTask(newTask);
+
+
 }
 
-function deleteTask() {
-  const close = document.querySelector('.close');
+function deleteTask(task) {
+  const close = task.querySelector('.close');
 
   close.addEventListener('click', () => {
-    
+    task.remove()
   });
 }
+
