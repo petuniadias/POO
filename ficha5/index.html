@@ -54,12 +54,30 @@
 
   <div class="filter">
     <label for="filter">
-      Filtrar:
+      Filtrar por género:
     </label>
-    <select name="filter">
-      <option>Por género</option>
-      <option>Por plataforma</option>
+    <select class="filterGenre" name="genre" required>
+      <option value="ação">Ação</option>
+      <option value="aventura">Aventura</option>
+      <option value="estrategia">Estratégia</option>
+      <option value="RPG">RPG</option>
+      <option value="desporto">Desporto</option>
+      <option value="corrida">Corrida</option>
+      <option value="online">On-line</option>
+      <option value="simulação">Simulação</option>
     </select>
+    <button class="filterGenreBtn">Filter</button>
+  </div>
+  <div class="filter">
+    <label for="plataform">
+      Filtrar por plataforma:
+    </label>
+    <select class="filterPlataform" name="plataform"> 
+      <option value="PC">PC</option>
+      <option value="PS5">PS5</option>
+      <option value="Xbox">Xbox</option>
+    </select>
+    <button class="filterPlataformBtn">Filter</button>
   </div>
 
   <table class="game-table">

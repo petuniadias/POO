@@ -23,12 +23,27 @@ forms.addEventListener('submit', event => {
   console.log(games);
 
   renderTable();
+  forms.reset();
 });
 
 function renderTable() {
   table.innerHTML = ``;
+    //filter games
+    const filterGenre = document.querySelector('.filterGenre').value;
+    const filterGenreBtn = document.querySelector('.filterGenreBtn');
+    const filterPlataform = document.querySelector('.filterPlataform').value;
+    const filterPlataformBtn = document.querySelector('.filterPlataformBtn');
+  
+    filterGenreBtn.addEventListener('click', () => {
+      
+    });
+  
+    filterPlataformBtn.addEventListener('click', () => {
+    });
+
 
   games.forEach((game, index) => {
+
     const tr = document.createElement('tr');
 
     tr.innerHTML = `
