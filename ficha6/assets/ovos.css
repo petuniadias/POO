@@ -19,3 +19,7 @@ body {
   cursor: pointer;
 }
 
+.ovo:hover {
+  border: 4px solid rgba(255, 0, 0, 0.326);
+}
+
