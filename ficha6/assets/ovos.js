@@ -1,20 +1,34 @@
 //atribuição dos ovos com o Ovo da páscoa
 const ovos = document.querySelectorAll('.ovo');
 
-const ovo1Index = Math.floor(Math.random() * 12);
-
-let ovo2Index;
-
-do {
-  ovo2Index = Math.floor(Math.random() * 12) + 1;
-} while (ovo1Index === ovo2Index);
-
-const easterOvos = [ovo1Index, ovo2Index]
+let easterOvos = [];
 let found = [];
 
-console.log(ovo1Index, ovo2Index);
+function randomOvo() {
+  const ovo1Index = Math.floor(Math.random() * 12);
 
-console.log(easterOvos);
+  let ovo2Index;
+
+  do {
+    ovo2Index = Math.floor(Math.random() * 12) + 1;
+  } while (ovo1Index === ovo2Index);
+
+  easterOvos = [ovo1Index, ovo2Index];
+
+
+  // Reseta as imagens
+  ovos.forEach(ovo => {
+    ovo.src = "assets/images/DiscoverEggs.png";
+  });
+
+  console.log(ovo1Index, ovo2Index);
+
+  console.log(easterOvos);
+}
+
+randomOvo();
+
+
 
 //mostra os ovos ao clicar
 ovos.forEach((ovo, index) => {
@@ -29,17 +43,27 @@ ovos.forEach((ovo, index) => {
     }
 
     if (found.length === 2) {
-      found.forEach(i => {
-        ovos[i].src = "assets/images/Ovo.png";
-      });
-      console.log('venceste! Parabéns! És ganda burro, perdeste o teu tempo a jogar esta merda!');
-      found = []; //remove os elementos do array ou ---> found.splice(0, found.length)
+      
+      const win = document.querySelector('.win-message');
+      win.innerHTML = `
+        <h2>Parabéns, encontraste os Ovos de Páscoa!</h2>
+      `
+
+      setTimeout(() => {
+        found = []; //remove os elementos do array ou ---> found.splice(0, found.length)
+        randomOvo();
+      }, 2000);
+
 
 
     } else {
       //volta à imagem inicial passado 2 segundos
       setTimeout(() => {
-        ovo.src = "assets/images/DiscoverEggs.png";
+        if (found.length < 2) {
+          ovo.src = "assets/images/DiscoverEggs.png";
+          found = found.filter(i => i !== index); // remove do array
+        }
+
       }, 2000);
     }
   });
