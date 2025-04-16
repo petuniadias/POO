@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz da Tabela Mágica</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Quiz da Tabela Mágica</h1>
+  <div id="contador"></div>
+  <div id="app">
+    <div id="jogo" class="hidden">
+      <div id="grelha">
+
+      </div>
+      <div id="perguntaContainer" class="hidden">
+        <p id="perguntaTexto"></p>
+        <div id="respostas"></div>
+      </div>
+    </div>
+    <div id="admin" class="hidden">
+      <h2>Painel de Administração</h2>
+      <table id="tabelaPerguntas">
+        <thead>
+          <th>Categoria</th>
+          <th>Pergunta</th>
+          <th>Correta</th>
+          <th>Remover</th>
+        </thead>
+        <tbody class="tbody">
+
+        </tbody>
+      </table>
+      <h3>Nova Pergunta</h3>
+      <input id="novaCategoria" placeholder="Categoria"><br>
+      <input id="novaPergunta" placeholder="Pergunta"><br>
+      <input id="resp1" placeholder="Resposta 1"><br>
+      <input id="resp2" placeholder="Resposta 2"><br>
+      <input id="resp3" placeholder="Resposta 3"><br>
+      <input id="resp4" placeholder="Resposta 4"><br>
+      <input id="respostaCerta" placeholder="Resposta Certa"><br>
+      <button id="btnAdicionarPergunta">Adicionar Pergunta</button>
+    </div>
+    <div id="leaderboard"></div>
+  </div>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
