@@ -6,10 +6,10 @@ let dogs = [];  // array de objetos
 // INJETAR DADOS CRIADOS A PARTIR DE INSTANCIAS DA CLASSE 
 export function init() {
     
-    let dog = new DogModel('Border Collie','img/BorderCollie.jpg', '' );
+    let dog = new DogModel('Border Collie','img/BorderCollie.jpg', 'https://pt.wikipedia.org/wiki/Border_collie' );
     dogs.push(dog)
 
-    dog = new DogModel('Bulldoge Frances', 'img/BulldogeFrances.jpg', '' );
+    dog = new DogModel('Bulldoge Frances', 'img/BulldogeFrances.jpg', 'https://pt.wikipedia.org/wiki/Buldogue_franc%C3%AAs' );
     dogs.push(dog)
     
     dog = new DogModel('Bull Terrier', 'img/BullTerrier.jpg', '' );

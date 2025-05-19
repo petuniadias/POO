@@ -1,0 +1,5 @@
+let movies = [];
+
+function renderMovies() {
+  
+}

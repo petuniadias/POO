@@ -12,11 +12,10 @@ function renderCatalog(dogs = []) {
   for (let dog of dogs) {
     result += `
       <div class="col mb-4">
-        <div class="card h-100" style="width: 18rem;">
-          <img class="card-img-top" src="${dog.imagem}" alt="${dog.raca}">
+        <div class="card mx-3" style="width: 300px;">
+          <img class="card-img-top" src="${dog.imagem}" alt="${dog.raca}" style="height: 200px; object-fit: cover;">
           <div class="card-body">
             <h5 class="card-title">${dog.raca}</h5>
-            <p class="card-text">Link: ${dog.link || 'Sem link'}</p>
             <a href="${dog.link}" class="btn btn-primary">Ver mais</a>
           </div>
         </div>
