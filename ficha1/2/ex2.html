@@ -6,6 +6,20 @@
   <title>Document</title>
 </head>
 <body>
-  <script></script>
+  <script>
+    let num;
+    const numbers = [];
+
+    do {
+    num = parseInt(prompt('Insira um número:'));
+    numbers.push(num);
+   } while (num != 0);
+
+   const numMax = Math.max(...numbers);
+   const numMin = Math.min(...numbers);
+
+   alert(`numMax ${numMax} numMin ${numMin}`);
+
+  </script>
 </body>
 </html>
