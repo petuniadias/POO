@@ -6,6 +6,23 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <script>
+    const genero = prompt('Qual é o seu género? (M/F)').toUpperCase();
+    const altura = parseInt(prompt('Qual é a sua altura em cm?'));
+    const peso = parseInt(prompt('Qual é o seu peso em kg?'));
+    const idade = parseInt(prompt('Qual é a sua idade?'));
+    function calculateTMB(genero, peso, altura, idade) {
+      switch (genero) {
+        case 'M':
+          const TMBmasc = parseInt(10 * peso + 6.25 * altura - 5 * idade + 5);
+          return alert(TMBmasc);
+        case 'F':
+          const TMBfem = parseInt(10 * peso + 6.25 * altura - 5 * idade - 161);
+          return alert(TMBfem);
+      }
+    }
+
+    calculateTMB(genero, peso, altura, idade);
+  </script>
 </body>
 </html>
