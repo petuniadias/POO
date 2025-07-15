@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>exercício 4</title>
+</head>
+<body>
+  <script>
+    const num = prompt('Escolha um número inteiro:');
+    let sum = 0;
+    for (let i = 0; i < num; i++) {
+      if (num % i === 0) {
+        sum += i;
+        console.log(sum);
+      }
+    }
+
+
+    if (sum == num) {
+      alert('O número é perfeito');
+    } else {
+      alert('O número não é perfeito');
+    }
+  </script>
+</body>
+</html>
