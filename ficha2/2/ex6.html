@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>exercício 6</title>
+</head>
+<body>
+  <script>
+    const texto = prompt('Escreva o seu texto:');
+    const palavra = prompt('Procurar palavra:');
+
+    function findWord(texto, palavra) {
+      const text = texto.split(" ");
+      let wordCount = 0;
+
+      for (let i = 0; i < text.length; i++) {
+        if(text[i] === palavra) {
+          wordCount++;
+        }
+      }
+
+      return wordCount;
+    }
+
+
+    alert(findWord(texto, palavra));
+  </script>
+</body>
+</html>
