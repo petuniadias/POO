@@ -34,11 +34,7 @@ class Library {
     if (exists) {
       console.log(`The book already exists`);
     } else {
-      const book = {
-        id: this.generateId(),
-        title, 
-        year
-      }
+      const book = new Book(this.generateId(), title, year);
       this.libraryList.push(book);
     }
   }
