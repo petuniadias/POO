@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form>
+    <label for="nome">
+      Nome do Jogo
+    </label>
+    <input class="nome" name="nome">
+
+    <label for="ano">
+      Ano de lançamento
+    </label>
+    <input class="ano" type="number" min="1900" max="2100" name="ano">
+
+    <label for="genero">
+      Género
+    </label>
+    <select class="genero" name="genero">
+      <option value="sci-fi">Sci-fi</option>
+      <option value="horror">Horror</option>
+    </select>
+
+    <label for="plataforma">
+      Plataforma
+    </label>
+    <select class="plataforma" name="plataforma" multiple>
+      <option value="PC">PC</option>
+      <option value="PS5">PS5</option>
+      <option value="Xbox">Xbox</option>
+    </select>
+
+    <label for="avaliação">
+      Avaliação
+    </label>
+
+    <input class="rating" type="number" min="0" max="10" name="avaliação">
+
+    <button class="submit" type="submit">Submit</button>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Nome do jogo
+        </th>
+        <th>
+          Ano de lançamento
+        </th>
+        <th>
+          Género
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+    </tbody>
+
+  </table>
+
+  <script>
+    const form = document.querySelector('form');
+    const nome = document.querySelector('.nome');
+    const ano = document.querySelector('.ano');
+    const genero = document.querySelector('.genero');
+    const plataforma = document.querySelector('.plataforma');
+    const rating = document.querySelector('.rating');
+    const submit = document.querySelector('.submit');
+
+    const table = document.querySelector('table');
+    const tbody = table.querySelector('tbody');
+
+    console.log(nome, ano, genero, plataforma, rating, table, tbody);
+
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      tbody.innerHTML += `
+      <tr>
+        <td>${nome.value}</td>  
+      </tr>
+      `;
+    });
+
+  </script>
+</body>
+</html>
